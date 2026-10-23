@@ -1,0 +1,8 @@
+{
+  "appId": "ru.rarefrequency.pvzshift",
+  "appName": "Смена на ПВЗ",
+  "webDir": "dist-android",
+  "android": {
+    "backgroundColor": "#e4cfa8"
+  }
+}

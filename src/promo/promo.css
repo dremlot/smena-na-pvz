@@ -1,0 +1,75 @@
+/* Промо-арт: те же цвета, что в игре — крафт-картон, тёмная стойка, красный луч сканера */
+:root {
+  --kraft: #e4cfa8;
+  --wall: #f1e7d3;
+  --ink: #1d2733;
+  --paper: #fbf8f1;
+  --laser: #e0392b;
+  --font-display: 'Rubik Mono One', 'Arial Black', sans-serif;
+  --font-body: 'Golos Text', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+body { background: #888; }
+
+/* ---------- Коробка ---------- */
+.box { position: relative; box-shadow: inset 0 -10px 0 rgba(0,0,0,.14), 0 6px 0 rgba(0,0,0,.18); }
+.box-lid { position: absolute; left: 0; right: 0; top: 0; height: 14%; background: rgba(255,255,255,.22); border-bottom: 2px solid rgba(0,0,0,.12); }
+.box-tape { position: absolute; left: 50%; top: 0; bottom: 0; width: 13%; transform: translateX(-50%); background: rgba(255,255,255,.3); }
+.box-label {
+  position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+  width: 56%; padding: 6% 6% 5%;
+  background: #fff;
+  box-shadow: 0 3px 0 rgba(0,0,0,.18);
+  display: grid; gap: 6%; justify-items: center;
+}
+.box-bars {
+  width: 100%; aspect-ratio: 5 / 1;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 3%, transparent 3% 6%, var(--ink) 6% 10%, transparent 10% 12%, var(--ink) 12% 13%, transparent 13% 16%);
+}
+.box-code { font-family: var(--font-display); color: var(--ink); line-height: 1; }
+
+/* ---------- Иконка 512 ---------- */
+.icon {
+  position: relative; width: 512px; height: 512px; overflow: hidden;
+  background: var(--kraft);
+  background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.035) 0 3px, transparent 3px 10px);
+}
+.icon-sun { position: absolute; left: 50%; top: 150px; width: 400px; height: 400px; transform: translateX(-50%); border-radius: 50%; background: #f2c14e; }
+.icon-person { position: absolute; left: 50%; top: 24px; transform: translateX(-50%); }
+.icon .box-code { font-size: 46px; }
+.icon .box-label { top: 56%; width: 50%; }
+.icon-laser {
+  position: absolute; left: 30px; right: 30px; top: 392px; height: 8px;
+  background: var(--laser);
+  box-shadow: 0 0 18px 4px rgba(224,57,43,.55);
+}
+
+/* ---------- Обложка 800×470 ---------- */
+.cover {
+  position: relative; width: 800px; height: 470px; overflow: hidden;
+  background: var(--wall);
+}
+.cover-wall {
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(0,0,0,.03) 0 2px, transparent 2px 9px);
+}
+.cover-title { position: absolute; left: 44px; top: 48px; display: grid; gap: 14px; }
+.cover-eyebrow { font: 700 16px var(--font-mono); letter-spacing: .16em; text-transform: uppercase; color: var(--laser); }
+.cover-name { font: 400 64px/1.02 var(--font-display); color: var(--ink); }
+.cover-pitch { font: 600 20px/1.35 var(--font-body); color: #5a4a33; }
+
+.cover-queue { position: absolute; right: 30px; bottom: 116px; width: 430px; height: 260px; }
+.q { position: absolute; bottom: 0; }
+.q1 { left: 0; }
+.q2 { left: 170px; bottom: 22px; }
+.q3 { left: 300px; bottom: 40px; opacity: .92; }
+.q svg { display: block; }
+
+.cover-counter {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 78px;
+  background: linear-gradient(#45566a 0 12px, var(--ink) 12px);
+}
+.cover .box-code { font-size: 20px; }
+.cover-catbox { position: absolute; left: 330px; bottom: 74px; width: 118px; }
+.cover-cat { position: absolute; left: 13px; bottom: 56px; }
+.cover-catbox .box { z-index: 1; }
